@@ -4,9 +4,9 @@
  * Database configurations
  */
 
-$db['user'] = '';
-$db['pass'] = '';
-$db['name'] = '';
-$db['host'] = '';
+$db['user'] = 'acommuser';
+$db['pass'] = 'acommuser';
+$db['name'] = 'alphacomm';
+$db['host'] = 'localhost';
 
 ?>

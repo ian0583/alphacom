@@ -1,6 +1,8 @@
 <?php
 
 require 'settings.php';
+require "includes/css/lessc.inc.php";
+lessc::ccompile( 'includes/css/main.less', 'includes/css/main.css', true );
 
 // set error and exception handlers
 set_error_handler('Core_Handler::errorHandler');
@@ -10,14 +12,12 @@ if (!empty($_SERVER['REDIRECT_MODULE']))
 {
 	$PARAMS = explode('/', $_SERVER['REDIRECT_MODULE']);
 }
-else
-{
-	$PARAMS = array('config');
-}
 
 $module = array_shift($PARAMS);
 $moduleBasePath = str_replace('-', '/', $module) . '.php';
 $templateBasePath = str_replace('-', '/', $module) . '.tpl';
+
+require 'verify.php';
 
 session_start();
 
@@ -56,7 +56,10 @@ if (file_exists(APP_CONTROLS . $parameters['module']) && (!isset($parameters['bo
 {
 	$PEOPS = new Core_Peopsquik($parameters);
 	
-	$PEOPS->display();
+	if ($parameters['allowdisplay'])
+	{
+		$PEOPS->display();
+	}
 }
 else
 {

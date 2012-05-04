@@ -39,7 +39,6 @@ class Core_ACL
 	public function signOut()
 	{
 		Core_Helper::clearSession('user');
-		Core_Helper::clearSession('permissions');
 	}
 
 	public function isSignedIn()

@@ -21,7 +21,11 @@ class Core_Peopsquik
 			
 			//$this->_setDisplayType($parameters['displaytype']);
 		}
-		$this->acl = new Core_ACL();
+
+		if (strpos($this->_parameters['module'], 'setup') === false)
+		{
+			$this->acl = new Core_ACL();
+		}
 		
 		global $PARAMS;
 		require APP_CONTROLS . $this->_parameters['module'];
@@ -29,9 +33,12 @@ class Core_Peopsquik
 	
 	public function display()
 	{
-		if ($this->acl->isSignedIn())
+		if ($this->acl)
 		{
-			$this->_template->assign('loggedIn', 1);
+			if ($this->acl->isSignedIn())
+			{
+				$this->_template->assign('loggedIn', 1);
+			}
 		}
 		
 		if (isset($this->_parameters['body']))
@@ -59,6 +66,31 @@ class Core_Peopsquik
 		}
 	}
 	
+	public function setMessage($message)
+	{
+		$_SESSION[APP_NAME]['message'] = $message;
+	}
+
+	public function hasMessage()
+	{
+		if (isset($_SESSION[APP_NAME]['message']))
+		{
+			return true;
+		}
+		return false;
+	}
+
+	public function getMessage()
+	{
+		if (isset($_SESSION[APP_NAME]['message']))
+		{
+			$temp = $_SESSION[APP_NAME]['message'];
+			unset($_SESSION[APP_NAME]['message']);
+			return $temp;
+		}
+		return false;
+	}
+
 	public function checkACL()
 	{
 		return $this->acl->isSignedIn();

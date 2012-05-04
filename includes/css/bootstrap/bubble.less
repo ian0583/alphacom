@@ -1,0 +1,93 @@
+.bubble-top,.bubble-right,.bubble-bottom,.bubble-left {
+	color: @white;
+	cursor: normal;
+	display: -moz-inline-stack;
+	display: inline-block;
+	font-size: 10px;
+	line-height: 10px;
+	padding: .5em 1em;
+	position: relative;
+	text-align: left;
+	.border-radius(4px);
+	background-color: @gray;
+	margin: 7px;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
+
+	&:after {
+		content: "\25B6";
+		display: block;
+		font-size: 2em;
+		height: 0;
+		line-height: 0;
+		position: absolute;
+		text-shadow: none;
+	}
+}
+
+.bubble-top:after {
+	color: @gray;
+	bottom: 0;
+	left: 1px;
+	text-align: center;
+	.rotate(90deg);
+	width: 100%;
+}
+
+.bubble-bottom:after {
+	bottom: auto;
+	color: @gray;
+	left: -2px;
+	top: 0;
+	text-align: center;
+	.rotate(-90deg);
+	width: 100%;
+}
+
+.bubble-left:after {
+	color: @gray;
+	right: -0.375em;
+	top: 50%;
+	margin-top: -.05em;
+	.rotate(0deg);
+}
+
+.bubble-right:after {
+	color: @gray;
+	left:-0.375em;
+	top: 50%;
+	margin-top: .1em;
+	.rotate(180deg);
+}
+
+.bubble-warning {
+	color: @warningText;
+	background-color: @warningBackground;
+	&:after {
+		color: @warningBackground;
+	}
+}
+
+.bubble-error {
+	color: @errorText;
+	background-color: @errorBackground;
+	&:after {
+		color: @errorBackground;
+	}
+}
+
+.bubble-success {
+	color: @successText;
+	background-color: @successBackground;
+	&:after {
+		color: @successBackground;
+	}
+}
+
+.bubble-info {
+	color: @infoText;
+	background-color: @infoBackground;
+	&:after {
+		color: @infoBackground;
+	}
+}
+

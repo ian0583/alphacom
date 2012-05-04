@@ -1,6 +1,4 @@
 <?
-require APP_LIB . 'config.php';
-
 class Core_DB
 {
     private $_db;

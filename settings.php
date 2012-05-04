@@ -17,9 +17,9 @@ define('APP_DEBUG', false);
 define('APP_VIEWS_COMPILED', APP_VIEWS . '.smarty/.compiled/');
 define('APP_VIEWS_CACHE', APP_VIEWS . '.smarty/.cache/');
 
-define('APP_NAME', 'IsTrBuddy');
+define('APP_NAME', 'AlphaComm');
 
-define('APP_TITLE', 'Issue Trackng Buddy');
+define('APP_TITLE', 'Awesome People Organzation');
 
 if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on')
 {
