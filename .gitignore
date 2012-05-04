@@ -2,3 +2,5 @@ apps/views/.smarty
 .buildpath
 .project
 .settings
+/log
+/uploads
