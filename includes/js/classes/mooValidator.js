@@ -59,7 +59,7 @@ var mooValidator = new Class(
 				self.addError(el, errorMsg);
 
 			},
-			onFormValidate : self.options.validate ? self.options.validate : defaultValidateEvent,
+			onFormValidate : self.options.validate,
 		});
 
 		// adding custom validators

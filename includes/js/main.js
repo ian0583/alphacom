@@ -14,7 +14,11 @@ window.addEvent( 'load', function()
 	
 	$$( 'form' ).each( function( el )
 	{
-		var validator = new mooValidator( el );
+		var validator = new mooValidator( el, {
+			validate : function( passed, form, event )
+			{
+			}
+		});
 	} );
 	
 	$$( 'button.submit' ).each( function( el )
@@ -23,9 +27,6 @@ window.addEvent( 'load', function()
 		
 		el.addEvent( 'click', function( e )
 		{
-			e.stopPropagation();
-			e.preventDefault();
-			
 			validateForm( form );
 		} );
 	} );
