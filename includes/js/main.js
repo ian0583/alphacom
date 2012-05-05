@@ -44,6 +44,17 @@ window.addEvent( 'load', function()
 		} );
 	} );
 	
+	$$( 'button.backpage' ).each( function( el )
+	{
+		var form = el.form;
+		
+		el.addEvent( 'click', function( e )
+		{
+			e.stopPropagation();
+			e.preventDefault();
+		} );
+	} );
+	
 	$$( '#mainwrapper .nav li' ).each( function( el )
 	{
 		el.addEvent( 'click', function( e )

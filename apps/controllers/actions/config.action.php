@@ -16,4 +16,4 @@ $fh = fopen($dest, "w+");
 fwrite($fh, $contents);
 fclose($fh);
 
-echo json_encode(true);
+$this->forward('success');

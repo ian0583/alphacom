@@ -56,10 +56,7 @@ if (file_exists(APP_CONTROLS . $parameters['module']) && (!isset($parameters['bo
 {
 	$PEOPS = new Core_Peopsquik($parameters);
 	
-	if ($parameters['allowdisplay'])
-	{
-		$PEOPS->display();
-	}
+	$PEOPS->display();
 }
 else
 {
