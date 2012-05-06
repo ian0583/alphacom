@@ -3,11 +3,11 @@
 $page = (int) @$PARAMS[0];
 $searchterm = @$PARAMS[1];
 
-$coursesObj = new DB_Courses();
+$batchesObj = new DB_Batches();
 
-$this->assign( 'courses', $coursesObj->getByPage($page, ITEMSPERPAGE, $searchterm, array('name')));
+$this->assign( 'batches', $batchesObj->getByPage($page, ITEMSPERPAGE, $searchterm, array('name')));
 
-$pages = $coursesObj->getTotalPages($searchterm, array('name'));
+$pages = $batchesObj->getTotalPages($searchterm, array('name'));
 
 if (($page + 1) < $pages)
 {

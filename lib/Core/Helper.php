@@ -87,4 +87,77 @@ class Core_Helper
 		}
 	}
 	
+	public static function paginationCounters($totalPages, $currentPage, $startWithZero = true, $adjacents = 2, $hasStartAndEnd = true)
+	{
+		$links = array();
+		$start = $startWithZero ? 0 : 1;
+		$position = 0;
+		
+		if ($totalPages <= $linksToDisplay) 
+		{
+			for ($i = $start; $i < ($totalPages + $start); $i++)
+			{
+				$links[] = $i;
+			}
+		}
+		else 
+		{
+			// check if currentPage is too close to start and end
+			if (($currentPage - $adjacents) < 1) 
+			{
+				// start
+				for ($i = $start; $i < ($currentPage + $adjacents + $start); $i++)
+				{
+					$links[] = $i;
+				}
+				$position = 1;
+			}
+			elseif (($currentPage + $adjacents) > $totalPages)
+			{
+				// end
+				for ($i = ($currentPage - $adjacents); $i < ($totalPages + $start); $i++)
+				{
+					$links[] = $i;
+				}
+				$position = 2;
+			}
+			else 
+			{
+				// middle
+				for ($i = ($currentPage - $adjacents); $i < ($currentPage + $adjacents + $start); $i++)
+				{
+					$links[] = $i;
+				}
+				
+				if ($currentPage - $adjacents == $start)
+				{
+					$position = 1;
+				}
+				
+				if ($currentPage + $adjacents == $totalPages) 
+				{
+					$position = 2;
+				}
+				
+			}
+			
+			if ($hasStartAndEnd) 
+			{
+				if ($position != 1) 
+				{
+					// start
+					$links = array_merge(array($start, '...'), $links);
+				}
+				
+				if ($position != 2) 
+				{
+					// end
+					array_push($links, '...');
+					array_push($links, $totalPages - 1 + $start);
+				}
+			}
+		}
+		
+		return $links;
+	}
 }

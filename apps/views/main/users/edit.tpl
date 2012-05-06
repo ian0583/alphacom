@@ -29,6 +29,16 @@
 						</div>
 					</div>
 
+					<div class="control-group">
+						<label class="control-label">Type</label>
+						<div class="controls">
+							<select name="type" type="text" class="input-xlarge">
+								<option value="0">Contributor</option>
+								<option value="1" {if $user.type eq 1}selected{/if}>Administrator</option>
+							</select>
+						</div>
+					</div>
+
 					<div class="form-actions">
 						<button class="btn btn-primary submit">Save changes</button>
 						<button class="btn btn-danger cancel">Cancel</button>

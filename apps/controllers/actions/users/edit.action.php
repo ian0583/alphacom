@@ -9,10 +9,11 @@ unset($data['confirm']);
 
 if ( $id )
 {
-	if ($password)
+	if (!$password)
 	{
-		$id = $usersObj->update($data);
+		unset($data['confirm']);
 	}
+	$id = $usersObj->update($data);
 }
 else 
 {

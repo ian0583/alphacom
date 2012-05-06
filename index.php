@@ -14,6 +14,7 @@ if (!empty($_SERVER['REDIRECT_MODULE']))
 }
 
 $module = array_shift($PARAMS);
+$module = $module ? $module : 'home';
 $moduleBasePath = str_replace('-', '/', $module) . '.php';
 $templateBasePath = str_replace('-', '/', $module) . '.tpl';
 

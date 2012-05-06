@@ -21,6 +21,8 @@ define('APP_NAME', 'AlphaComm');
 
 define('APP_TITLE', 'Awesome People Organzation');
 
+define('ITEMSPERPAGE', 10);
+
 if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on')
 {
 	define('APP_PROTOCOL', 'https');

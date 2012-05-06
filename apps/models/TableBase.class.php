@@ -78,6 +78,55 @@ class TableBase
 		}
 	}
 	
+	public function getByPage($page = 0, $items = null, $searchterm = null, $fields = array())
+	{
+		$searchterm = addslashes ( $searchterm );
+		
+		if (is_null ( $items ))
+		{
+			$items = ITEMSPERPAGE;
+		}
+		
+		$where = '';
+		if (! ! $searchterm)
+		{
+			$searchterm = strtolower ( $searchterm );
+			$where = ' where (';
+			foreach ( $fields as $field )
+			{
+				$where .= " lower($field) like '%$searchterm%' or ";
+			}
+			$where = substr ( $where, 0, strlen ( $where ) - 3 ) . ')';
+		}
+		
+		$limit = $page * $items;
+		
+		$query = "select * from `" . $this->table . "` $status $where " . $order . " limit $limit, $items";
+		return $this->db->getArray ( $query );
+	}
+
+	public function getTotalPages($searchterm = null, $fields = array())
+	{
+		$searchterm = addslashes ( $searchterm );
+				
+		$where = '';
+		if (! ! $searchterm)
+		{
+			$searchterm = strtolower ( $searchterm );
+			$where = ' where (';
+			foreach ( $fields as $field )
+			{
+				$where .= " lower(`$field`) like '%$searchterm%' or ";
+			}
+			$where = substr ( $where, 0, strlen ( $where ) - 3 ) . ')';
+		}
+		
+		$query = "select count(*) as `count` from `" . $this->table . "` $status $where";
+		$result = $this->db->getRow ( $query );
+		
+		return ceil ( $result ['count'] / ITEMSPERPAGE );
+	}
+	
 	public final function __set($var, $value)
 	{
 		$this->data[$var] = $value;

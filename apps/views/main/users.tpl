@@ -19,7 +19,29 @@
 						{/section}
 					</tbody>
 				</table>
+				{if $pages > 1}
+				<div class="pager">
+				
+					{if $previous != -1}
+					<div class="previous">
+						<a href="{$smarty.const.APP_URI}users/{$previous}/{$searchterm}">Previous</a>
+					</div>
+					{/if}
+					
+					{if $next != -1}
+					<div class="next">
+						<a href="{$smarty.const.APP_URI}users/{$next}/{$searchterm}">Next</a>
+					</div>
+					{/if}
+					<br class="clear" />
+				
+				</div>
+				{/if}
 			</div>
+			<div class="span3">
+				<button onclick="location.href='users-edit'" class="btn btn-success">Add new +</button>
+			</div>
+		
 		</div>		
 	</div>
 </div>

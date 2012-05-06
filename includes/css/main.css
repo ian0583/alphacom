@@ -2890,9 +2890,10 @@ a.thumbnail:hover {
 textarea { resize:none; }
 h1, h2, h3, h4, h5 { font-weight:normal; }
 #mainwrapper {
-  margin-top:40px;
+  margin-top:10px;
   min-height:300px;
 }
+#menu .container { width:940px; }
 #login_username strong { color:#ffffff; }
 .popoverPlaceholder {
   width:249px;
@@ -2933,6 +2934,7 @@ h1, h2, h3, h4, h5 { font-weight:normal; }
   font-size:11px;
 }
 .container.spacer { margin-top:20px; }
+select.input-xlarge { width:280px; }
 .text_right { text-align:right; }
 .text_center { text-align:center; }
 #footer {
@@ -2940,7 +2942,6 @@ h1, h2, h3, h4, h5 { font-weight:normal; }
   margin-top:30px;
 }
 #footer .navbar-text { color:#999999; }
-#config { margin-top:15px; }
 #homepage .boxed {
   border:1px solid #999999;
   -webkit-border-radius:7px;
@@ -2948,7 +2949,6 @@ h1, h2, h3, h4, h5 { font-weight:normal; }
   border-radius:7px;
   min-height:200px;
   margin-left:3px;
-  margin-top:10px;
   padding:3px;
   cursor:pointer;
 }
@@ -2960,7 +2960,6 @@ h1, h2, h3, h4, h5 { font-weight:normal; }
   border-radius:7px;
   min-height:200px;
   margin-left:3px;
-  margin-top:10px;
   padding:3px;
 }
 #login #loginForm p { color:#555555; }
@@ -2972,7 +2971,6 @@ h1, h2, h3, h4, h5 { font-weight:normal; }
   color:#9d261d;
   padding:5px 10px;
 }
-#users { margin-top:10px; }
 #users #listings table tbody tr { cursor:pointer; }
 #users h3.header { margin-bottom:20px; }
 #users #edit #errorMsg {

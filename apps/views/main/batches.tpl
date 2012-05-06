@@ -7,14 +7,17 @@
 				<table class="table table-striped table-bordered">
 					<thead>
 						<tr>
-							<th>Course Name</th>
+							<th>Batch Name</th>
+							<th colspan="2">Year</th>
 						</tr>
 					</thead>
 					
 					<tbody>
-						{section name=x loop=$courses}
-							<tr onclick="location.href='courses-edit/{$courses[x].id}'">
-								<td>{$courses[x].name}</td>
+						{section name=x loop=$batches}
+							<tr onclick="location.href='batches-edit/{$batches[x].id}'">
+								<td>{$batches[x].name}</td>
+								<td>{$batches[x].year}</td>
+								<td>{$batches[x].sub}</td>
 							</tr>
 						{sectionelse}
 							<tr><td colspan="4">No records found</td></tr>
@@ -26,13 +29,13 @@
 				
 					{if $previous != -1}
 					<div class="previous">
-						<a href="{$smarty.const.APP_URI}courses/{$previous}/{$searchterm}">Previous</a>
+						<a href="{$smarty.const.APP_URI}batches/{$previous}/{$searchterm}">Previous</a>
 					</div>
 					{/if}
 					
 					{if $next != -1}
 					<div class="next">
-						<a href="{$smarty.const.APP_URI}courses/{$next}/{$searchterm}">Next</a>
+						<a href="{$smarty.const.APP_URI}batches/{$next}/{$searchterm}">Next</a>
 					</div>
 					{/if}
 					<br class="clear" />
@@ -40,10 +43,6 @@
 				</div>
 				{/if}
 			</div>
-			<div class="span3">
-				<button class="btn btn-success">Add new +</button>
-			</div>
-		
 		</div>		
 	</div>
 </div>
