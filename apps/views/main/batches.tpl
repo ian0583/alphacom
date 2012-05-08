@@ -2,7 +2,7 @@
 	<div id="listings">
 
 		<div class="row-fluid">
-			<div class="span3 text_center"><img src="{$smarty.const.APP_INCLUDES}img/toolbox.png"></div>
+			<div class="span3 text_center"><img src="{$smarty.const.APP_INCLUDES}img/link.png"></div>
 			<div class="span6">
 				<table class="table table-striped table-bordered">
 					<thead>
@@ -42,6 +42,9 @@
 				
 				</div>
 				{/if}
+			</div>
+			<div class="span3">
+				<button onclick="location.href='users-edit'" class="btn btn-success">Add new +</button>
 			</div>
 		</div>		
 	</div>

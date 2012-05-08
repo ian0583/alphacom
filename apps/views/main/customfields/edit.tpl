@@ -1,31 +1,17 @@
-<div id="users">
+<div id="customfields">
 	<div id="edit">
 		<div class="row-fluid">
-			<div class="span3 text_center"><img src="{$smarty.const.APP_INCLUDES}img/edit_profile.png"></div>
+			<div class="span3 text_center"><img src="{$smarty.const.APP_INCLUDES}img/save.png"></div>
 			<div class="span6">
-				<h3 class="header">User details : {$user.username}</h3>
+				<h3 class="header">Field details : {$customfield.name}</h3>
 				<div id="errorMsg"></div>
-				<form id="user_edit" class="form-horizontal" action="users-edit.do" method="post">
+				<form id="customfield_edit" class="form-horizontal" action="customfields-edit.do" method="post">
 				
-					<input type="hidden" name="id" value="{$user.id}">
+					<input type="hidden" name="id" value="{$customfield.id}">
 					<div class="control-group">
-						<label class="control-label">Username</label>
+						<label class="control-label">Field name</label>
 						<div class="controls">
-							<input type="text" name="username" class="input-xlarge required" {if $user.username}disabled="disabled"{/if} value="{$user.username}">
-						</div>
-					</div>
-				
-					<div class="control-group">
-						<label class="control-label">Change Password</label>
-						<div class="controls">
-							<input type="password" class="input-xlarge" id="password" name="password">
-						</div>
-					</div>
-
-					<div class="control-group">
-						<label class="control-label">Confirm Password</label>
-						<div class="controls">
-							<input type="password" id="confirm" name="confirm" class="input-xlarge validate-match matchInput:'password' matchName:'password'">
+							<input type="text" name="name" class="input-xlarge required" value="{$customfield.name}">
 						</div>
 					</div>
 
@@ -33,8 +19,8 @@
 						<label class="control-label">Type</label>
 						<div class="controls">
 							<select name="type" type="text" class="input-xlarge">
-								<option value="0">Contributor</option>
-								<option value="1" {if $user.type eq 1}selected{/if}>Administrator</option>
+								<option value="alphanum">Alpha-numeric</option>
+								<option value="numeric" {if $customfield.type eq 'numeric'}selected{/if}>Numeric</option>
 							</select>
 						</div>
 					</div>
@@ -42,7 +28,7 @@
 					<div class="form-actions">
 						<button class="btn btn-primary submit">Save changes</button>
 						<button class="btn btn-danger cancel">Cancel</button>
-						<button class="btn backpage" onclick="location.href='users';">Back</button>
+						<button class="btn backpage" onclick="location.href='customfields';">Back</button>
 					</div>
 				</form>
 			
@@ -62,10 +48,10 @@ window.addEvent('domready', function()
 		$('errorMsg').hide();
 	}
 
-	$('user_edit').addEvent('ajaxPost', function()
+	$('customfield_edit').addEvent('ajaxPost', function()
 	{
 		new REST({
-			url : 'users-edit.do',
+			url : 'customfields-edit.do',
 			data : this.toQueryString(),
 			method : 'post',
 			onSuccess : function(response)
