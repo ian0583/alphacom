@@ -2971,9 +2971,9 @@ select.input-xlarge { width:280px; }
   color:#9d261d;
   padding:5px 10px;
 }
-#users #listings table tbody tr { cursor:pointer; }
-#users h3.header { margin-bottom:20px; }
-#users #edit #errorMsg {
+#listings table tbody tr { cursor:pointer; }
+h3.header { margin-bottom:20px; }
+#edit #errorMsg {
   border:1px solid #ffe9a6;
   -webkit-border-radius:2px;
   -moz-border-radius:2px;

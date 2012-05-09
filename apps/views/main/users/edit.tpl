@@ -42,7 +42,7 @@
 					<div class="form-actions">
 						<button class="btn btn-primary submit">Save changes</button>
 						<button class="btn btn-danger cancel">Cancel</button>
-						<button class="btn backpage" onclick="location.href='users';">Back</button>
+						<button class="btn backpage" onclick="location.href='users';">Back to list</button>
 					</div>
 				</form>
 			
