@@ -5,7 +5,7 @@ $searchterm = @$PARAMS[1];
 
 $customfieldsObj = new DB_Customfields();
 
-$this->assign( 'customfields', $customfieldsObj->getByPage($page, ITEMSPERPAGE, $searchterm, array('name')));
+$this->assign( 'customfields', Core_Helper::desanitize($customfieldsObj->getByPage($page, ITEMSPERPAGE, $searchterm, array('name'))));
 
 $pages = $customfieldsObj->getTotalPages($searchterm, array('name'));
 

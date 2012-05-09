@@ -6,7 +6,7 @@ $customfieldsObj = new DB_Customfields();
 
 if ($id)
 {
-	$customfield = $customfieldsObj->get($id);
+	$customfield = Core_Helper::desanitize($customfieldsObj->get($id));
 }
 
 $this->assign('customfield', $customfield);

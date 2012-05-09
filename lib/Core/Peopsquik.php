@@ -48,6 +48,10 @@ class Core_Peopsquik
 					$this->_template->assign( 'loggedUser', 
 							$this->acl->getUser() );
 				}
+				else if ( strpos($this->_parameters[ 'module' ], 'login') === false )
+				{
+					$this->forward( 'login' );
+				}
 			}
 			
 			if ( isset( $this->_parameters[ 'body' ] ) )

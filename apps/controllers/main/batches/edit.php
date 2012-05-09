@@ -6,7 +6,7 @@ $batchesObj = new DB_Batches();
 
 if ($id)
 {
-	$batch = $batchesObj->get($id);
+	$batch = Core_Helper::desanitize($batchesObj->get($id));
 }
 
 $this->assign('batch', $batch);

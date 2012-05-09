@@ -6,7 +6,7 @@ $coursesObj = new DB_Courses();
 
 if ($id)
 {
-	$course = $coursesObj->get($id);
+	$course = Core_Helper::desanitize($coursesObj->get($id));
 }
 
 $this->assign('course', $course);

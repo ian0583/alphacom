@@ -13,11 +13,11 @@ if ( $id )
 	{
 		unset($data['confirm']);
 	}
-	$id = $usersObj->update($data);
+	$id = $usersObj->update(Core_Helper::sanitize($data));
 }
 else 
 {
-	$id = $usersObj->update($data);
+	$id = $usersObj->update(Core_Helper::sanitize($data));
 }
 
 $this->forward( 'users-edit/' . $id );

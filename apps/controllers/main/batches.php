@@ -5,7 +5,7 @@ $searchterm = @$PARAMS[1];
 
 $batchesObj = new DB_Batches();
 
-$this->assign( 'batches', $batchesObj->getByPage($page, ITEMSPERPAGE, $searchterm, array('name')));
+$this->assign( 'batches', Core_Helper::desanitize($batchesObj->getByPage($page, ITEMSPERPAGE, $searchterm, array('name'))));
 
 $pages = $batchesObj->getTotalPages($searchterm, array('name'));
 

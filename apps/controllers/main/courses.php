@@ -5,7 +5,7 @@ $searchterm = @$PARAMS[1];
 
 $coursesObj = new DB_Courses();
 
-$this->assign( 'courses', $coursesObj->getByPage($page, ITEMSPERPAGE, $searchterm, array('name')));
+$this->assign( 'courses', Core_Helper::desanitize($coursesObj->getByPage($page, ITEMSPERPAGE, $searchterm, array('name'))));
 
 $pages = $coursesObj->getTotalPages($searchterm, array('name'));
 

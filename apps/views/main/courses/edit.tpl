@@ -18,7 +18,7 @@
 					<div class="control-group">
 						<label class="control-label">Description</label>
 						<div class="controls">
-							<input type="text" name="description" class="input-xlarge required" value="{$course.description}">
+							<input type="text" name="description" class="input-xlarge" value="{$course.description}">
 						</div>
 					</div>
 

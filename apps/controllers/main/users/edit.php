@@ -6,7 +6,7 @@ $usersObj = new DB_Users();
 
 if ($user_id)
 {
-	$user = $usersObj->get($user_id);
+	$user = Core_Helper::desanitize($usersObj->get($user_id));
 }
 
 $this->assign('user', $user);
