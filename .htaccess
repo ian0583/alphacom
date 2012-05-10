@@ -1,4 +1,4 @@
-#RewriteEngine On
+RewriteEngine On
 
 # Allows the following to be accessed directly
 #RewriteRule ^(includes|uploads)/(.+) "$0" [L]
