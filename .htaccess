@@ -10,5 +10,5 @@ RewriteRule (.*) "index.php" [QSA,E=MODULE:$1]
 # Quotes from the data from GPC (GET/POST/COOKIE) won't be automatically escaped
 #php_value magic_quotes_gpc 0
 
-Options -Indexes
+#Options -Indexes
 
