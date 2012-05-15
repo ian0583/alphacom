@@ -15,6 +15,8 @@
 		<script type="text/javascript" src="{$smarty.const.APP_INCLUDES}js/classes/mooCal.js"></script>
 		<script type="text/javascript" src="{$smarty.const.APP_INCLUDES}js/classes/mooValidator.js"></script>
 		<script type="text/javascript" src="{$smarty.const.APP_INCLUDES}js/classes/rippleCenter.js"></script>
+		<script type="text/javascript" src="{$smarty.const.APP_INCLUDES}js/classes/Autocompleter.js"></script>
+		<script type="text/javascript" src="{$smarty.const.APP_INCLUDES}js/classes/Autocompleter.Request.js"></script>
 		<script type="text/javascript" src="{$smarty.const.APP_INCLUDES}js/classes/notimoo.js"></script>
 		<script type="text/javascript" src="{$smarty.const.APP_INCLUDES}js/classes/cache.js"></script>
 		<script type="text/javascript" src="{$smarty.const.APP_INCLUDES}js/classes/REST.js"></script>

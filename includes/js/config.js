@@ -4,6 +4,12 @@ var ACOMM = {
 	growl: ''
 };
 
+var APP_URI = document.head.baseURI;
+
+var URLS = {
+	autocomplete : APP_URI + 'autocomplete.json/'
+};
+
 customValidators =
 	[];
 

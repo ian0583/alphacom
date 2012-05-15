@@ -8,6 +8,8 @@ class Core_Peopsquik
 	private $_template;
 
 	private $_vars;
+	
+	private $_returndata = '';
 
 	public $acl = false;
 
@@ -40,27 +42,34 @@ class Core_Peopsquik
 	{
 		if ( $this->_parameters[ 'allowdisplay' ] )
 		{
-			if ( $this->acl )
+			if ($this->_parameters['allowdisplay'] == 'json')
 			{
-				if ( $this->acl->isSignedIn() )
-				{
-					$this->_template->assign( 'loggedIn', 1 );
-					$this->_template->assign( 'loggedUser', 
-							$this->acl->getUser() );
-				}
-				else if ( strpos($this->_parameters[ 'module' ], 'login') === false )
-				{
-					$this->forward( 'login' );
-				}
+				echo json_encode($this->_returndata);
 			}
-			
-			if ( isset( $this->_parameters[ 'body' ] ) )
+			else 
 			{
-				$this->_template->assign( 'body', 
-						APP_VIEWS . $this->_parameters[ 'body' ] );
+				if ( $this->acl )
+				{
+					if ( $this->acl->isSignedIn() )
+					{
+						$this->_template->assign( 'loggedIn', 1 );
+						$this->_template->assign( 'loggedUser', 
+								$this->acl->getUser() );
+					}
+					else if ( strpos($this->_parameters[ 'module' ], 'login') === false )
+					{
+						$this->forward( 'login' );
+					}
+				}
+				
+				if ( isset( $this->_parameters[ 'body' ] ) )
+				{
+					$this->_template->assign( 'body', 
+							APP_VIEWS . $this->_parameters[ 'body' ] );
+				}
+				
+				$this->_template->display( $this->_parameters[ 'template' ] );
 			}
-			
-			$this->_template->display( $this->_parameters[ 'template' ] );
 		}
 		else
 		{

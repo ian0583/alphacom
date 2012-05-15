@@ -29,7 +29,7 @@ $modules = parse_ini_file(APP_LIB . 'modules.ini', true);
 if (isset($modules[$module]))
 {
         $parameters = $modules[$module];
-        $parameters['allowdisplay'] = true;
+        $parameters['allowdisplay'] = 'default';
         $isDefault = false;
 }
 else 
@@ -39,10 +39,15 @@ else
 		$parameters['module'] = 'actions/' . str_replace('.do', '.action', $moduleBasePath);
 		$parameters['allowdisplay'] = false;
 	}
-	else 
+	else if (stripos($module, '.json') !== false)
+	{
+		$parameters['module'] = 'json/' . $moduleBasePath;
+		$parameters['allowdisplay'] = 'json';
+	}
+	else
 	{
 		$parameters['module'] = 'main/' . $moduleBasePath;
-		$parameters['allowdisplay'] = true;
+		$parameters['allowdisplay'] = 'default';
 		$parameters['template'] = 'main/' . $templateBasePath;
 		
 		if (stripos($templateBasePath, 'partial') === false)

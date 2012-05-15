@@ -47,36 +47,6 @@ window.addEvent('domready', function()
 	{
 		$('errorMsg').hide();
 	}
-
-	$('customfield_edit').addEvent('ajaxPost', function()
-	{
-		new REST({
-			url : 'customfields-edit.do',
-			data : this.toQueryString(),
-			method : 'post',
-			onSuccess : function(response)
-			{
-				if ( response )
-				{
-					$('errorMsg').innerHTML = 'Saved';
-					$('errorMsg').show();
-					$('errorMsg').setStyle('color', '#46a546');
-					setTimeout("$('errorMsg').hide()", 5000);
-				}
-			},
-			onFailure : function(response)
-			{
-				if ( response )
-				{
-					$('errorMsg').innerHTML = 'Something went wrong';
-					$('errorMsg').show();
-					$('errorMsg').setStyle('color', '#9d261d');
-					setTimeout("$('errorMsg').hide()", 5000);
-				}
-			},
-
-		}).send();
-	});
 });
 {/literal}
 </script>

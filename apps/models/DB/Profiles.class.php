@@ -1,9 +1,9 @@
 <?php
 
-class DB_Profile extends TableBase
+class DB_Profiles extends TableBase
 {
 
-	private $addressObj;
+	private $addressesObj;
 	private $batchObj;
 	private $contactsObj;
 	private $coursesObj;
@@ -12,14 +12,14 @@ class DB_Profile extends TableBase
 	
     public function __construct()
     {
-    	$this->addressObj = new DB_Addresses();
+    	$this->addressesObj = new DB_Addresses();
     	$this->batchObj = new DB_Batches();
     	$this->contactsObj = new DB_Contacts();
     	$this->coursesObj = new DB_Courses();
     	$this->customdataObj = new DB_Customfieldsdata();
     	$this->usersObj = new DB_Users();
     	
-    	$this->table = "profile";
+    	$this->table = "profiles";
         $this->primary = "id";
         parent::__construct();
     }
@@ -34,7 +34,7 @@ class DB_Profile extends TableBase
 	    	$profile['batch'] = $this->batchObj->get($profile['batch_id']);
 	    	$profile['course'] = $this->coursesObj->get($profile['course_id']);
 	    	$profile['contacts'] = $this->contactsObj->getContactsByProfile($id);
-	    	$profile['addresses'] = $this->addressObj->getAddressByProfile($id);
+	    	$profile['addresses'] = $this->addressesObj->getAddressByProfile($id);
 	    	$profile['customfields'] = $this->customdataObj->getCustomDataByProfile($id);
     	}
     	
