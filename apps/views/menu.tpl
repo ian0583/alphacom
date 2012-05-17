@@ -8,34 +8,7 @@
 					<span>AlphaComm</span>
 				</a>
 
-				{if !$loggedIn}
-				<ul class="nav pull-right" data-behavior="BS.Dropdown">
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							<i class="icon-lock icon-white"></i> Sign in <b class="caret"></b>
-						</a>
-						<div class="dropdown-menu roundedBlack">
-							<div class="popoverPlaceholder">
-								<h2>Sign In</h2>
-								<form class="showLogin" action="login.php">
-									<p>Sign in to AlphaComm.org or Register now if you don't already have an account.</p>
-									<div class="control-group">
-										<label>Username</label>
-										<input class="input-medium focused" id="focusedInput" type="text" placeholder="Your username...">
-									</div>
-									<label>Password</label>
-									<input class="input-medium focused" id="focusedInput" type="text" placeholder="Your password..."> 
-									<label>&nbsp;</label>
-									<button type="submit" class="btn btn-warning btn-medium">Sign in</button>
-									<p class="fp"><a href="password-recover.php">Forgot your password?</a></p>
-								</form> 
-							</div>
-						</div>
-					</li>
-				</ul>
-				<!-- /End Public section -->
-				{else}
-				<!-- / Private section -->
+				{if $loggedIn}
 				<ul class="nav pull-right" data-behavior="BS.Dropdown">
 					{if $loggedUser.type eq 1}
 					<li class="dropdown">
