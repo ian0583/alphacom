@@ -1,6 +1,5 @@
-apps/views/.smarty
 .buildpath
 .project
 .settings
-/log
-/uploads
+/rest/log
+/rest/uploads

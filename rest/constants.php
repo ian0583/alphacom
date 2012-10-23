@@ -25,6 +25,8 @@ define( 'LOGRESTCALLS', true );
 
 define( 'VALIDATION_DATEFORMAT', 'dd-mm-yyyy' );
 
+define( 'ALLOWEDHOSTS_LIMIT', false );
+
 // SQLITE PATH
 define( 'APP_SQLITE', '/var/www/oauth/' );
 
