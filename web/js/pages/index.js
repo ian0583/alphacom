@@ -1,37 +1,12 @@
 window.addEvent( 'domready', function()
 {
 	
-	$$( '#buttons #employee' ).each( function( el )
+	$$( '.boxed' ).each( function( el )
 	{
-		el.addEvent( 'click', function( e )
+		el.addEvent( 'click', function()
 		{
-			e.preventDefault();
-			e.stopPropagation();
-			
-			location.href = PAGES.job_userprofile;
+			location.href = el.get( 'id' ) + '.php';
 		} );
 	} );
-	
-	$$( '#buttons #agency' ).each( function( el )
-	{
-		el.addEvent( 'click', function( e )
-		{
-			e.preventDefault();
-			e.stopPropagation();
-			
-			location.href = PAGES.agencylogin;
-		} )
-	} );
-	
-	$$( '#buttons #employer' ).each( function( el )
-			{
-				el.addEvent( 'click', function( e )
-				{
-					e.preventDefault();
-					e.stopPropagation();
-					
-					location.href = PAGES.employer_home;
-				} )
-			} );
 	
 } );

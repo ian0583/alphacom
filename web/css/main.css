@@ -4901,166 +4901,168 @@ a.badge:hover {
 .ui-tooltip-error:after {
   color: #9d261d;
 }
-#mainwrapper {
-  min-width: 960px;
-}
-#footer {
-  min-width: 960px;
-}
 textarea {
   resize: none;
 }
-.addButton {
-  background-image: url('../img/origami/32/green-02.png');
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
 }
-.addFieldButton {
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
+h3.header {
+  margin-bottom: 20px;
 }
-.addButton:hover {
-  background-image: url('../img/origami/32/yellow-02.png');
+#mainwrapper {
+  margin-top: 10px;
+  min-height: 300px;
 }
-.minwidth {
-  min-width: 960px;
+#menu .container {
+  width: 940px;
 }
-#nav_jobs {
-  min-width: 960px;
-  background-color: #d9d9d9;
+#login_username strong {
+  color: #fff;
 }
-#nav_jobs #logo {
-  width: 250px;
+.popoverPlaceholder {
+  width: 249px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
-#nav_jobs #search {
-  margin-top: 20px;
-  height: 30px;
+.dropdown-menu.roundedBlack {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 3px solid #000;
 }
-#nav_jobs #search input {
-  width: 500px;
-  height: 40px;
-  font-size: 20px;
-  margin-top: -10px;
+.popoverPlaceholder h2 {
+  font-size: 15px;
+  color: #000;
+  background-color: #eee;
+  position: relative;
+  top: -4px;
+  padding: 0px 17px;
 }
-#nav_jobs #search button {
-  height: 40px;
-  margin-top: -10px;
-  font-size: 20px;
+.showLogin {
+  padding: 8px 15px 0px 15px;
 }
-#nav_subscribers {
-  min-width: 960px;
-  background-color: #d9d9d9;
+.showLogin p {
+  font-size: 11px;
+  line-height: none;
+  margin-bottom: 10px;
 }
-#nav_subscribers #logo {
-  width: 250px;
+.showLogin p.fp a {
+  padding: 8px 0px 0px 58px;
+  color: #049cdb;
+  text-decoration: underline;
 }
-#index #logo {
+.showLogin label {
+  float: left;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 150px;
-  margin-bottom: 50px;
+  width: 58px;
+  padding-top: 5px;
+  font-size: 11px;
 }
-#index #buttons {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-#index #buttons #buttoncontainer {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 800px;
-  text-align: center;
-}
-#index #buttons #employee,
-#index #buttons #agency,
-#index #buttons #employer {
-  background-color: #999;
-  height: 220px;
-  width: 250px;
-  margin: 5px;
-}
-#index #buttons #employee img,
-#index #buttons #agency img,
-#index #buttons #employer img {
+.container.spacer {
   margin-top: 20px;
 }
-#index #labels {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bolder;
-  line-height: 25px;
+select.input-xlarge {
+  width: 280px;
 }
-#jobs .resultitem {
-  margin: 10px;
-  cursor: pointer;
+.text_right {
+  text-align: right;
 }
-#jobs .filteritem {
-  margin: 10px;
-  cursor: pointer;
-}
-#jobs .span2 {
+.text_center {
   text-align: center;
 }
-#job .well {
-  min-width: 960px;
+#footer {
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
-#job #joblogo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+#footer .navbar-text {
+  color: #999;
 }
-#job #btnApply {
-  width: 100%;
-  font-weight: bolder;
-  font-size: 20px;
+#homepage .boxed {
+  min-height: 250px;
+  padding: 3px;
 }
-#job #jobdescription p {
-  font-weight: bolder;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: justify;
+#homepage .boxed p {
+  color: #555;
 }
-#job_apply .btn {
-  font-weight: bolder;
-  font-size: 20px;
-  width: 250px;
+#login #loginForm {
+  border: 1px solid #999;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  min-height: 200px;
+  margin-left: 3px;
+  padding: 3px;
 }
-#job_user .btn {
-  font-weight: bolder;
-  font-size: 20px;
-  width: 250px;
+#login #loginForm p {
+  color: #555;
 }
-#agency_login .btn {
-  font-weight: bolder;
-  font-size: 20px;
-  width: 250px;
+#login #errorMsg {
+  background-color: #eee;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #9d261d;
+  padding: 5px 10px;
 }
-#employer_viewapplications .resultitem {
-  margin: 10px;
+#listings table tbody tr {
   cursor: pointer;
 }
-#employer_viewapplications .span2 {
+#edit #errorMsg {
+  border: 1px solid #ffe9a6;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #ffe9a6;
   text-align: center;
-}
-#employer_viewapplications .details {
-  border-bottom: 1px solid #ddd;
   margin-bottom: 5px;
 }
-#employer_viewapplications .applications {
-  margin-top: 10px;
+ul.autocompleter-choices {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #555;
+  text-color: #000;
+  border-left-color: #eee;
+  border-right-color: #eee;
+  border-bottom-color: #555;
+  background-color: #555;
+  text-align: left;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  z-index: 50;
 }
-#search input {
-  width: 500px;
-  height: 40px;
-  font-size: 20px;
-  margin-top: -10px;
+ul.autocompleter-choices li {
+  position: relative;
+  color: white;
+  height: 15px;
+  background-color: #555;
+  margin: -2px 0 0 0;
+  padding: 0.2em 1.5em 0.2em 1em;
+  display: block;
+  float: none !important;
+  cursor: pointer;
+  font-weight: normal;
+  white-space: nowrap;
+  font-size: 0.8em;
+  line-height: 1.3em;
 }
-#search button {
-  height: 40px;
-  margin-top: -10px;
-  font-size: 20px;
+ul.autocompleter-choices li.autocompleter-selected {
+  background-color: #333;
+  color: #fff;
+  height: 15px;
+}
+ul.autocompleter-choices span.autocompleter-queried {
+  display: inline;
+  float: none;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {
+  color: #9FCFFF;
 }
