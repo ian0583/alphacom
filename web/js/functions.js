@@ -210,6 +210,21 @@ function populateForm( form, data )
 	} );
 }
 
+function autoCompleteDropdown ( text, table, field, url, hidden, length )
+{
+	new Autocompleter.Request.JSON( text,  url + '[table=' + table + ']' ,
+		{
+		'postVar' : field,
+		minLength : length,
+		width : '250px',
+		maxChoices : 12,
+		onSelection : function( el, sel, val, input )
+		{
+			
+		},
+		} );
+}
+
 function updateSelectOptions( select, data, id_value, id_text, defaultvalue )
 {
 	select.options.length = 0;
@@ -340,25 +355,23 @@ function roar( title, message )
 	ROAR.alert( title, message );
 }
 
-
-//Truncating method
-function truncate(string, length, end)
+// Truncating method
+function truncate( string, length, end )
 {
-  if (typeof length == 'undefined')
-  {
-        length = 20;
-  }
-
-  if (typeof end == 'undefined')
-  {
-        end = '...';
-  }
-
-  if (string == null)
-  {
-        return '';
-  }
-
-  return string.substring(0, length-1)+(string.length > length ? end : '');
+	if ( typeof length == 'undefined' )
+	{
+		length = 20;
+	}
+	
+	if ( typeof end == 'undefined' )
+	{
+		end = '...';
+	}
+	
+	if ( string == null )
+	{
+		return '';
+	}
+	
+	return string.substring( 0, length - 1 ) + ( string.length > length ? end : '' );
 }
-

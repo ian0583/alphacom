@@ -29,6 +29,9 @@ $less->compileFile( APP_ROOT . 'css/main.less', APP_ROOT . 'css/main.css' );
 <script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
 <script type="text/javascript" src="js/classes/REST.js"></script>
+<script type="text/javascript" src="js/classes/Autocompleter.js"></script>
+<script type="text/javascript" src="js/classes/Autocompleter.Request.js"></script>
+<script type="text/javascript" src="js/classes/cache.js"></script>
 <script type="text/javascript" src="js/classes/stringfunctions.js"></script>
 <script type="text/javascript" src="js/classes/roar.js"></script>
 <script type="text/javascript" src="js/classes/mooValidator.js"></script>

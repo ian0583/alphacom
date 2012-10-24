@@ -22,7 +22,7 @@ var Autocompleter = new Class({
 		onHide: $empty,
 		onBlur: $empty,
 		onFocus: $empty,*/
-		minLength: 1,
+		minLength: 3,
 		markQuery: true,
 		width: 'inherit',
 		maxChoices: 10,
@@ -31,12 +31,12 @@ var Autocompleter = new Class({
 		emptyChoices: null,
 		visibleChoices: true,
 		className: 'autocompleter-choices',
-		zIndex: 99999,
+		zIndex: 42,
 		delay: 400,
 		observerOptions: {},
 		fxOptions: {},
 
-		autoSubmit: false,
+		autoSubmit: true,
 		overflow: false,
 		overflowMargin: 25,
 		selectFirst: false,
@@ -54,11 +54,13 @@ var Autocompleter = new Class({
 		allowDupes: false,
 
 		cache: true,
-		relative: false
+		relative: false,
+		
+		submitbutton: 'btn_search'
 	},
 
 	initialize: function(element, options) {
-		this.element = element;
+		this.element = $(element);
 		this.setOptions(options);
 		this.build();
 		this.observer = new Observer(this.element, this.prefetch.bind(this), $merge({
@@ -88,9 +90,11 @@ var Autocompleter = new Class({
 					'zIndex': this.options.zIndex
 				}
 			}).inject(document.body);
+//			}).injectAfter(this.element);
 			this.relative = false;
 			if (this.options.relative) {
-				this.choices.inject(this.element, 'after');
+//				this.choices.inject(this.element, 'after');
+				this.choices.injectAfter(this.element);
 				this.relative = this.element.getOffsetParent();
 			}
 			this.fix = new OverlayFix(this.choices);
@@ -149,7 +153,7 @@ var Autocompleter = new Class({
 	},
 
 	setSelection: function(finish) {
-		var input = this.selected.inputValue, value = input;
+		var input = this.selected.inputValue; value = input;
 		var start = this.queryValue.length, end = input.length;
 		if (input.substr(0, start).toLowerCase() != this.queryValue.toLowerCase()) start = 0;
 		if (this.options.multiple) {
@@ -174,6 +178,12 @@ var Autocompleter = new Class({
 		if (finish || this.selectMode == 'pick') start = end;
 		this.element.selectRange(start, end);
 		this.fireEvent('onSelection', [this.element, this.selected, value, input]);
+		
+		// for auto search on click
+		if ($(this.options.submitbutton))
+		{
+			$(this.options.submitbutton).click();
+		}
 	},
 
 	showChoices: function() {
@@ -182,8 +192,8 @@ var Autocompleter = new Class({
 		if (this.fix) {
 			var pos = this.element.getCoordinates(this.relative), width = this.options.width || 'auto';
 			this.choices.setStyles({
-				'left': pos.left,
-				'top': pos.bottom,
+ 				'left': pos.left,
+ 				'top': pos.bottom,
 				'width': (width === true || width == 'inherit') ? pos.width : width
 			});
 		}
@@ -204,6 +214,7 @@ var Autocompleter = new Class({
 			styles.height = item.getCoordinates(this.choices).bottom;
 			this.overflown = true;
 		};
+		
 		this.choices.setStyles(styles);
 		this.fix.show();
 		if (this.options.visibleChoices) {
@@ -283,6 +294,10 @@ var Autocompleter = new Class({
 			(this.options.emptyChoices || this.hideChoices).call(this);
 		} else {
 			if (this.options.maxChoices < tokens.length && !this.options.overflow) tokens.length = this.options.maxChoices;
+			//var closer = new Element('div', {'html': 'X', 'class': 'autocompletecloser'}).inject(this.choices);
+			//new Element('li', {'html': 'Suggestions:'}).inject(this.choices);
+			var self = this;
+			//closer.addEvent('click', function() {self.hideChoices();})
 			tokens.each(this.options.injectChoice || function(token){
 				var choice = new Element('li', {'html': this.markQueryValue(token)});
 				choice.inputValue = token;

@@ -16,26 +16,26 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="courses">
+								<a href="courses.php">
 									<i class="icon-book"></i>
 									Courses
 								</a>
 							</li>
 							<li>
-								<a href="batches">
+								<a href="batches.php">
 									<i class="icon-th"></i>
 									Batches
 								</a>
 							</li>
 							<li>
-								<a href="officers">
+								<a href="officers.php">
 									<i class="icon-star"></i>
 									Officers
 								</a>
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="customfields">
+								<a href="customfields.php">
 									<i class="icon-edit"></i>
 									Custom Fields
 								</a>
@@ -49,24 +49,24 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="profiles">
+								<a href="profiles.php">
 									<i class="icon-map-marker"></i>
 									Profiles
 								</a>
 							</li>
 							<li>
-								<a href="users">
+								<a href="users.php">
 									<i class="icon-user"></i>
 									Users
 								</a>
 							</li>
-							<li class="divider"></li>
-							<li>
-								<a href="summary">
-									<i class="icon-file"></i>
-									Summary
-								</a>
-							</li>
+<!-- 							<li class="divider"></li> -->
+<!-- 							<li> -->
+<!-- 								<a href="summary.php"> -->
+<!-- 									<i class="icon-file"></i> -->
+<!-- 									Summary -->
+<!-- 								</a> -->
+<!-- 							</li> -->
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -76,19 +76,19 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="profiles-view/{$loggedUser.id}">
+								<a id="viewProfileItem">
 									<i class="icon-eye-open"></i>
 									View Profile
 								</a>
 							</li>
 							<li>
-								<a href="profiles-edit/{$loggedUser.id}">
+								<a id="editProfileItem">
 									<i class="icon-pencil"></i>
 									Edit Profile
 								</a>
 							</li>
 							<li>
-								<a href="users-edit/{$loggedUser.id}">
+								<a id="editUserItem">
 									<i class="icon-cog"></i>
 									Account Settings
 								</a>
