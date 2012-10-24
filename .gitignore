@@ -3,4 +3,4 @@
 .settings
 /rest/log
 /rest/uploads
-/rest/data/db/DB
+/rest/data/db/
