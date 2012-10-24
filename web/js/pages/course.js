@@ -50,7 +50,7 @@ window.addEvent( 'domready', function()
 	$( 'course_edit' ).addEvent( 'ajaxPost', function()
 	{
 		var rMethod = 'post';
-		if ( courses_id )
+		if (  getValueFromForm( $('course_edit'), 'courses_id')  )
 		{
 			rMethod = 'put';
 		}
@@ -63,6 +63,7 @@ window.addEvent( 'domready', function()
 			{
 				var course = response.shift();
 				roar( MESSAGES.save );
+				populateForm( $( 'course_edit' ), course );
 				$( 'courseName' ).innerHTML = course.coursename;
 			}
 			} ).send( $( 'course_edit' ).toQueryString() );

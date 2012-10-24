@@ -75,7 +75,7 @@ require "header.php";
 						<div class="controls">
 							<input type="hidden" name="users_id" id="users_id"> <input
 								type="text" id="users"
-								class="input-xlarge required autocomplete">
+								class="input-xlarge autocomplete">
 						</div>
 					</div>
 
@@ -84,7 +84,7 @@ require "header.php";
 						<div class="controls">
 							<input type="hidden" name="batches_id" id="batches_id"> <input
 								type="text" id="batches"
-								class="input-xlarge required autocomplete">
+								class="input-xlarge autocomplete">
 						</div>
 					</div>
 
@@ -93,7 +93,7 @@ require "header.php";
 						<div class="controls">
 							<input type="hidden" name="courses_id" id="courses_id"> <input
 								type="text" id="courses"
-								class="input-xlarge required autocomplete">
+								class="input-xlarge autocomplete">
 						</div>
 					</div>
 
@@ -166,3 +166,7 @@ require "header.php";
 <script type="text/javascript">
 Asset.javascript('js/pages/profile.js');
 </script>
+
+<?php 
+require 'footer.php';
+?>

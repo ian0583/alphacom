@@ -44,35 +44,44 @@ window.addEvent( 'domready', function()
 				
 				$( 'profileName' ).innerHTML = profile.lastname + ', ' + profile.firstname;
 				
-				new REST(
-					{
-					url : URLS.generic_users + profile.users_id,
-					method : 'get',
-					onSuccess : function( response )
-					{
-						$( 'users' ).set( 'value', response[ 0 ].username );
-					}
-					} ).send();
+				if ( !!profile.users_id.toInt() )
+				{
+					new REST(
+						{
+						url : URLS.generic_users + profile.users_id,
+						method : 'get',
+						onSuccess : function( response )
+						{
+							$( 'users' ).set( 'value', response[ 0 ].username );
+						}
+						} ).send();
+				}
 				
-				new REST(
-					{
-					url : URLS.generic_batches + profile.batches_id,
-					method : 'get',
-					onSuccess : function( response )
-					{
-						$( 'batches' ).set( 'value', response[ 0 ].name );
-					}
-					} ).send();
+				if ( !!profile.batches_id.toInt() )
+				{
+					new REST(
+						{
+						url : URLS.generic_batches + profile.batches_id,
+						method : 'get',
+						onSuccess : function( response )
+						{
+							$( 'batches' ).set( 'value', response[ 0 ].name );
+						}
+						} ).send();
+				}
 				
-				new REST(
-					{
-					url : URLS.generic_courses + profile.courses_id,
-					method : 'get',
-					onSuccess : function( response )
-					{
-						$( 'courses' ).set( 'value', response[ 0 ].name );
-					}
-					} ).send();
+				if ( !!profile.courses_id.toInt() )
+				{
+					new REST(
+						{
+						url : URLS.generic_courses + profile.courses_id,
+						method : 'get',
+						onSuccess : function( response )
+						{
+							$( 'courses' ).set( 'value', response[ 0 ].name );
+						}
+						} ).send();
+				}
 			}
 			} ).send();
 	}
@@ -84,7 +93,7 @@ window.addEvent( 'domready', function()
 	$( 'profile_edit' ).addEvent( 'ajaxPost', function()
 	{
 		var rMethod = 'post';
-		if ( profiles_id )
+		if ( getValueFromForm( $( 'profile_edit' ), 'profiles_id' ) )
 		{
 			rMethod = 'put';
 		}
@@ -98,6 +107,7 @@ window.addEvent( 'domready', function()
 				var profile = response.shift();
 				roar( MESSAGES.save );
 				$( 'otherInfo' ).show();
+				populateForm( $( 'profile_edit' ), profile );
 				$( 'profileName' ).innerHTML = profile.lastname + ', ' + profile.firstname;
 			}
 			} ).send( $( 'profile_edit' ).toQueryString() );
@@ -117,6 +127,16 @@ window.addEvent( 'domready', function()
 			field = 'user' + field;
 		}
 		autoCompleteDropdown( elem, elem.id, field, URLS.custom_autocomplete, hiddenElem, 2, true )
+	} );
+	
+	$( 'addAddress' ).addEvent( 'click', function()
+	{
+		window.location = PAGES.addresses + profiles_id;
+	} );
+	
+	$( 'addContact' ).addEvent( 'click', function()
+	{
+		window.location = PAGES.contacts + profiles_id;
 	} );
 	
 } );

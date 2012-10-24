@@ -220,7 +220,15 @@ function autoCompleteDropdown ( text, table, field, url, hidden, length )
 		maxChoices : 12,
 		onSelection : function( el, sel, val, input )
 		{
-			
+			new REST({
+				url : URLS['generic_' + table] + '[' + field + '=' + val + ']',
+				method : 'get',
+				onSuccess : function ( response )
+				{
+					var result = response.shift();
+					$(table + '_id').set('value', result[table + '_id']);
+				}
+			}).send();
 		},
 		} );
 }

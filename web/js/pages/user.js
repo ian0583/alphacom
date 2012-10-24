@@ -41,35 +41,39 @@ window.addEvent( 'domready', function()
 				var user = users.shift();
 				
 				populateForm( $( 'user_edit' ), user );
-				$('userName').innerHTML = user.username;
+				$( 'userName' ).innerHTML = user.username;
 				
-				getElementFromForm( $('user_edit'), 'username').set('readonly', true);
+				getElementFromForm( $( 'user_edit' ), 'username' ).set( 'readonly', true );
 			}
 			} ).send();
 	}
 	
-	$('user_edit').addEvent('ajaxPost', function (){
+	$( 'user_edit' ).addEvent( 'ajaxPost', function()
+	{
 		var rMethod = 'post';
-		if (users_id)
-			{
+		if ( getValueFromForm( $('user_edit'), 'users_id') )
+		{
 			rMethod = 'put';
-			}
+		}
 		
-		new REST({
+		new REST(
+			{
 			url : URLS.generic_users,
 			method : rMethod,
-			onSuccess : function ( response )
+			onSuccess : function( response )
 			{
 				var user = response.shift();
-				roar(MESSAGES.save);
-				$('userName').innerHTML = user.username;
+				roar( MESSAGES.save );
+				populateForm( $( 'user_edit' ), user );
+				getElementFromForm( $( 'user_edit' ), 'username' ).set( 'readonly', true );
+				$( 'userName' ).innerHTML = user.username;
 			}
-		}).send( $('user_edit').toQueryString());
-	});
+			} ).send( $( 'user_edit' ).toQueryString() );
+	} );
 	
 	if ( $( 'errorMsg' ).innerHTML == '' )
 	{
 		$( 'errorMsg' ).hide();
 	}
-		
+	
 } );

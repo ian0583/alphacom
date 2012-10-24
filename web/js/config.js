@@ -32,8 +32,10 @@ var URLS =
 		generic_addresses : RESTSERVER_URI + 'addresses/',
 		generic_courses : RESTSERVER_URI + 'courses/',
 		generic_contacttypes : RESTSERVER_URI + 'contacttypes/',
+		generic_contacts : RESTSERVER_URI + 'contacts/',
 		generic_countries : RESTSERVER_URI + 'countries/',
 		generic_users : RESTSERVER_URI + 'users/',
+		generic_schoolyearofficers : RESTSERVER_URI + 'schoolyearofficers/',
 	};
 
 var PAGES =
@@ -49,6 +51,10 @@ var PAGES =
 		users : APP_URI + 'users.php',
 		courses : APP_URI + 'courses.php',
 		profiles : APP_URI + 'profiles.php',
+		contacts : APP_URI + 'contacts.php?profiles_id=',
+		addresses : APP_URI + 'addresses.php?profiles_id=',
+		addresses_edit : APP_URI + 'address.php?',
+		contacts_edit : APP_URI + 'contact.php?',
 	}
 
 var LISTDATA =

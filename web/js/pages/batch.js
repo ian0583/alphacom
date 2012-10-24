@@ -50,7 +50,7 @@ window.addEvent( 'domready', function()
 	$( 'batch_edit' ).addEvent( 'ajaxPost', function()
 	{
 		var rMethod = 'post';
-		if ( batches_id )
+		if (  getValueFromForm( $('batch_edit'), 'batches_id')  )
 		{
 			rMethod = 'put';
 		}
@@ -63,6 +63,7 @@ window.addEvent( 'domready', function()
 			{
 				var batch = response.shift();
 				roar( MESSAGES.save );
+				populateForm( $( 'batch_edit' ), batch );
 				$( 'batchName' ).innerHTML = batch.name;
 			}
 			} ).send( $( 'batch_edit' ).toQueryString() );
