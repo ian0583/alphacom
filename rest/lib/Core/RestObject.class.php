@@ -75,7 +75,7 @@ abstract class Core_RestObject
 		}
 		
 		// convert mongoIDs to strings
-		$this->_responseData = $this->_cleanMongoIds( $this->_responseData );
+// 		$this->_responseData = $this->_cleanMongoIds( $this->_responseData );
 	}
 
 	protected final function _cleanMongoIds ( $data )

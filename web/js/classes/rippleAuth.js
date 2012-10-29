@@ -161,7 +161,7 @@ var rippleAuth = new Class(
 						} );
 					
 					globalcache.set( 'keepalive', token.keepalive, CONFIG.expire );
-					if ( 0 == token.keepalive )
+					if ( false == token.keepalive )
 					{
 						ck = Cookie.write( 'keepalive_ck', 'enabled',
 							{
@@ -173,7 +173,7 @@ var rippleAuth = new Class(
 					
 					if ( self.options.redirect )
 					{
-						window.location = self.options.redirect;
+//						window.location = self.options.redirect;
 					}
 					else
 					{

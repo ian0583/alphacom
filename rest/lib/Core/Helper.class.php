@@ -444,13 +444,13 @@ class Core_Helper
 		foreach ( $array as $key => $item )
 		{
 			// Serialize the current element and create a md5 hash
-			if ( is_null( $byId ) || ! isset( $item[ $byId ] ) )
+			if ( is_null( $byId ) || ! isset( $key[ $byId ] ) )
 			{
-				$hash = md5( serialize( $item ) );
+				$hash = md5( serialize( $key ) );
 			}
 			else
 			{
-				$hash = md5( serialize( $item[ $byId ] ) );
+				$hash = md5( serialize( $key[ $byId ] ) );
 			}
 			// If the md5 didn't come up yet, add the element to
 			// to arrayRewrite, otherwise drop it

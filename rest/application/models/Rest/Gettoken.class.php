@@ -105,12 +105,11 @@ class Rest_GetToken extends Core_RestObject
 		if ( isset( $result ) && count( $result ) != 0 )
 		{
 			$ts = time();
-			
 			$data = array( 'timestamp' => $ts );
 			$this->db->autoexecute( $this->_table, $data, array( $this->_primaryKey => $result[ $this->_primaryKey ] ) );
 			
 			$a[ 'id' ] = $result[ 'users_id' ];
-			$a[ 'keepalive' ] = $_GET[ 'keepalive' ];
+			$a[ 'keepalive' ] = $_POST[ 'keepalive' ] ? true : false;
 			$a[ 'ts' ] = $ts;
 			
 			$a[ 'value' ] = $this->_auth->generateToken( 'session', $a );
