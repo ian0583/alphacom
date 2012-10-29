@@ -363,6 +363,26 @@ function roar( title, message )
 	ROAR.alert( title, message );
 }
 
+function clearCache()
+{
+	globalcache.clear( 'acomm_token' );
+	globalcache.clear( 'acomm_user' );
+	globalcache.clear( 'acomm_users_id' );
+	globalcache.clear( 'keepalive' );
+	globalcache.reset();
+	Cookie.dispose( 'acomm_token' );
+	Cookie.dispose( 'keepalive_ck' );
+
+	Cookie.dispose( 'token',
+		{
+			domain : COOKIEDOMAIN
+		} );
+	Cookie.dispose( 'keepalive_ck',
+		{
+			domain : COOKIEDOMAIN
+		} );
+}
+
 // Truncating method
 function truncate( string, length, end )
 {

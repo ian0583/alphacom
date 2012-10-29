@@ -29,6 +29,7 @@ $less->compileFile( APP_ROOT . 'css/main.less', APP_ROOT . 'css/main.css' );
 <script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
 <script type="text/javascript" src="js/classes/REST.js"></script>
+<script type="text/javascript" src="js/classes/rippleAuth.js"></script>
 <script type="text/javascript" src="js/classes/Autocompleter.js"></script>
 <script type="text/javascript" src="js/classes/Autocompleter.Request.js"></script>
 <script type="text/javascript" src="js/classes/cache.js"></script>
@@ -42,7 +43,10 @@ $less->compileFile( APP_ROOT . 'css/main.less', APP_ROOT . 'css/main.css' );
 <body>
 
 	<?
+	if ( stripos( $page, 'login' ) === false )
+	{
 		require "nav.php";
+	}
 	?>
 
-	<div id="mainwrapper" class="row-fluid">
+	<div id="mainwrapper" class="row-fluid" style="visibility: hidden;">

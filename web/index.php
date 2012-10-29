@@ -15,7 +15,7 @@ require "header.php";
 				<img alt="" src="img/search_user.png">
 			</div>
 		</button>
-		<button class="span4 btn boxed" id="profiles_edit">
+		<button class="span4 btn boxed" id="profile">
 			<h3>Add new profile</h3>
 			<p>Add a new member profile in to the system</p>
 			<div class="text_center">

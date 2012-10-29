@@ -44,19 +44,6 @@ window.addEvent( 'domready', function()
 				
 				$( 'profileName' ).innerHTML = profile.lastname + ', ' + profile.firstname;
 				
-				if ( !!profile.users_id.toInt() )
-				{
-					new REST(
-						{
-						url : URLS.generic_users + profile.users_id,
-						method : 'get',
-						onSuccess : function( response )
-						{
-							$( 'users' ).set( 'value', response[ 0 ].username );
-						}
-						} ).send();
-				}
-				
 				if ( !!profile.batches_id.toInt() )
 				{
 					new REST(

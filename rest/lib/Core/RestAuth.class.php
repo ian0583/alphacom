@@ -44,7 +44,7 @@ class Core_RestAuth
 
 	protected function _getConsumerAuth ()
 	{
-		$this->_db = new Core_Sqlite( 'oauth' );
+		//$this->_db = new Core_Sqlite( 'oauth' );
 		$this->_consumerKey = $_SERVER[ 'HTTP_CONSUMERKEY' ];
 		$this->_consumerSecret = $_SERVER[ 'HTTP_CONSUMERSECRET' ];
 		$this->_accessToken = @$_SERVER[ 'HTTP_ACCESSTOKEN' ];

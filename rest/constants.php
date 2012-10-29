@@ -27,6 +27,9 @@ define( 'VALIDATION_DATEFORMAT', 'dd-mm-yyyy' );
 
 define( 'ALLOWEDHOSTS_LIMIT', false );
 
+define( 'TOKEN_LIMIT', 1800 );
+define( 'TOKEN_REFRESH', 900 );
+
 // SQLITE PATH
 define( 'APP_SQLITE', '/var/www/oauth/' );
 

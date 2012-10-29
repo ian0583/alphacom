@@ -136,53 +136,23 @@ var rippleAuth = new Class(
 				if ( response.length > 0 )
 				{
 					var user = response.shift();
-					var users_id = user._id;
+					var users_id = user.users_id;
 					
-					globalcache.set( 'user', user );
-					globalcache.set( 'users_id', users_id );
-					globalcache.set( 'firstname', user.personal.firstname );
-					globalcache.set( 'lastname', user.personal.lastname );
-					Cookie.write( 'users_id_ck', users_id,
-						{
-						duration : CONFIG.expireCookie,
-						domain : COOKIEDOMAIN, // change to correct
-						// settings on qa,
-						// uat and prod
-						} );
-					Cookie.write( 'firstname_ck', user.personal.firstname,
-						{
-						duration : CONFIG.expireCookie,
-						domain : COOKIEDOMAIN, // change to correct
-						// settings on qa,
-						// uat and prod
-						} );
-					Cookie.write( 'lastname_ck', user.personal.lastname,
-						{
-						duration : CONFIG.expireCookie,
-						domain : COOKIEDOMAIN, // change to correct
-						// settings on qa,
-						// uat and prod
-						} );
-					Cookie.write( 'avatar_ck', user.personal.avatar,
-						{
-						duration : CONFIG.expireCookie,
-						domain : COOKIEDOMAIN, // change to correct
-						// settings on qa,
-						// uat and prod
-						} );
+					globalcache.set( 'acom_user', user );
+					globalcache.set( 'acom_users_id', users_id );
 					
 					if ( globalcache.get( 'redirect' ) )
 					{
 						globalcache.clear( 'redirect' );
 					}
-					globalcache.set( 'token', token.value, CONFIG.expire,
+					globalcache.set( 'acomm_token', token.value, CONFIG.expire,
 						{
 						duration : CONFIG.expireCookie,
 						domain : COOKIEDOMAIN, // change to correct
 						// settings on qa,
 						// uat and prod
 						} );
-					var ck = Cookie.write( 'token', token.value,
+					var ck = Cookie.write( 'acomm_token', token.value,
 						{
 						duration : CONFIG.expireCookie,
 						domain : COOKIEDOMAIN, // change to correct
@@ -203,7 +173,6 @@ var rippleAuth = new Class(
 					
 					if ( self.options.redirect )
 					{
-						replaceAuthBox( token.firstname, token.lastname );
 						window.location = self.options.redirect;
 					}
 					else
@@ -237,7 +206,7 @@ var rippleAuth = new Class(
 				},
 			headers :
 				{
-					'token' : globalcache.get( 'token' ) ? globalcache.get( 'token' ) : ( Cookie.read( 'token' ) ? Cookie.read( 'token' ) : '' )
+					'token' : globalcache.get( 'acomm_token' ) ? globalcache.get( 'acomm_token' ) : ( Cookie.read( 'acomm_token' ) ? Cookie.read( 'acomm_token' ) : '' )
 				},
 			onSuccess : function( bool )
 			{
@@ -248,7 +217,7 @@ var rippleAuth = new Class(
 					{
 						self.getUser( bool );
 					}
-					globalcache.set( 'token', bool.value, CONFIG.expire );
+					globalcache.set( 'acomm_token', bool.value, CONFIG.expire );
 					globalcache.set( 'id', bool.id, CONFIG.expire );
 					globalcache.set( 'keepalive', bool.keepalive, CONFIG.expire );
 					globalcache.save();

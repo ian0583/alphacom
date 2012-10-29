@@ -75,18 +75,18 @@
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu">
-							<li>
-								<a id="viewProfileItem">
-									<i class="icon-eye-open"></i>
-									View Profile
-								</a>
-							</li>
-							<li>
-								<a id="editProfileItem">
-									<i class="icon-pencil"></i>
-									Edit Profile
-								</a>
-							</li>
+<!-- 							<li> -->
+<!-- 								<a id="viewProfileItem"> -->
+<!-- 									<i class="icon-eye-open"></i> -->
+<!-- 									View Profile -->
+<!-- 								</a> -->
+<!-- 							</li> -->
+<!-- 							<li> -->
+<!-- 								<a id="editProfileItem"> -->
+<!-- 									<i class="icon-pencil"></i> -->
+<!-- 									Edit Profile -->
+<!-- 								</a> -->
+<!-- 							</li> -->
 							<li>
 								<a id="editUserItem">
 									<i class="icon-cog"></i>

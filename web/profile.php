@@ -71,15 +71,6 @@ require "header.php";
 					</div>
 
 					<div class="control-group">
-						<label class="control-label">Username</label>
-						<div class="controls">
-							<input type="hidden" name="users_id" id="users_id"> <input
-								type="text" id="users"
-								class="input-xlarge autocomplete">
-						</div>
-					</div>
-
-					<div class="control-group">
 						<label class="control-label">Batch</label>
 						<div class="controls">
 							<input type="hidden" name="batches_id" id="batches_id"> <input
