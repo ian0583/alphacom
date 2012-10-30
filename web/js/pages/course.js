@@ -50,10 +50,6 @@ window.addEvent( 'domready', function()
 	$( 'course_edit' ).addEvent( 'ajaxPost', function()
 	{
 		var rMethod = 'post';
-		if (  getValueFromForm( $('course_edit'), 'courses_id')  )
-		{
-			rMethod = 'put';
-		}
 		
 		new REST(
 			{
@@ -64,7 +60,7 @@ window.addEvent( 'domready', function()
 				var course = response.shift();
 				roar( MESSAGES.save );
 				populateForm( $( 'course_edit' ), course );
-				$( 'courseName' ).innerHTML = course.coursename;
+				$( 'courseName' ).innerHTML = course.name;
 			}
 			} ).send( $( 'course_edit' ).toQueryString() );
 	} );
