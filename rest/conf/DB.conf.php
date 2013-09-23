@@ -18,7 +18,7 @@ if (! defined ( 'DB_MAIN' ))
 $DATABASES [$i] ['host'] = 'localhost';
 $DATABASES [$i] ['username'] = 'inter_admin';
 $DATABASES [$i] ['password'] = 'NeM2qAUD';
-$DATABASES [$i] ['db'] = 'b15_6526112_alphacomm';
+$DATABASES [$i] ['db'] = 'alphacomm';
 $DATABASES [$i] ['persistent'] = true;
 
 // add additional databases here

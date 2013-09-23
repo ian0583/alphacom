@@ -1,6 +1,8 @@
 .buildpath
 .project
 .settings
-/rest/log
-/rest/uploads
-/rest/data/db/
+rest/log
+rest/uploads
+rest/data/db/
+web/js/config.js
+rest/application/views/.smarty/
