@@ -4,7 +4,7 @@
 
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="brand" href="{$smarty.const.APP_URI}">
+				<a class="brand" href="index.php">
 					<span>AlphaComm</span>
 				</a>
 

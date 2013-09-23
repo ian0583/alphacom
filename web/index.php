@@ -11,24 +11,25 @@ require "header.php";
 			<h3>View listing of profiles</h3>
 			<p>View and search for member profiles</p>
 			<div class="text_center">
-				<img alt="" src="img/database.png">
-				<img alt="" src="img/search_user.png">
+				<img alt="" src="img/database.png"> <img alt=""
+					src="img/search_user.png">
 			</div>
 		</button>
 		<button class="span4 btn boxed" id="profile">
 			<h3>Add new profile</h3>
 			<p>Add a new member profile in to the system</p>
 			<div class="text_center">
-				<img alt="" src="img/add_male_user.png">
-				<img alt="" src="img/add_female_user.png">
+				<img alt="" src="img/add_male_user.png"> <img alt=""
+					src="img/add_female_user.png">
 			</div>
 		</button>
 		<button class="span4 btn boxed" id="users">
 			<h3>Create a user with profile</h3>
-			<p>Have a new contributor? Add them now so they can also add new information to the list</p>
+			<p>Have a new contributor? Add them now so they can also add new
+				information to the list</p>
 			<div class="text_center">
-				<img alt="" src="img/add_user.png">
-				<img alt="" src="img/male_female_users.png">
+				<img alt="" src="img/add_user.png"> <img alt=""
+					src="img/male_female_users.png">
 			</div>
 		</button>
 	</div>
