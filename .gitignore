@@ -4,5 +4,5 @@
 rest/log
 rest/uploads
 rest/data/db/
-web/js/config.js
+rest/data/db/DB
 rest/application/views/.smarty/
