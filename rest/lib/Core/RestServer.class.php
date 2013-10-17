@@ -205,7 +205,7 @@ abstract class Core_RestServer
 	 * @param $_SERVER string       	
 	 * @return string
 	 */
-	protected final function getFullUrl ( $_SERVER )
+	protected final function getFullUrl ()
 	{
 		$protocol = @$_SERVER[ 'HTTPS' ] == 'on' ? 'https' : 'http';
 		$location = $_SERVER[ 'REQUEST_URI' ];

@@ -16,7 +16,7 @@ var defaultValidateEvent = function( passed, form, evt )
 customValidators =
 	[];
 
-var RESTSERVER_URI = 'http://devbox/personal/alphacom/rest/default.rest/';
+var RESTSERVER_URI = 'http://localhost/alphacom/rest/default.rest/';
 var COOKIEDOMAIN = APP_URI;
 
 var CONFIG =
